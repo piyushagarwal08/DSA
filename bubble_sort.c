@@ -17,9 +17,9 @@ int main()
 	}	
 
 	
-	for(r=1;r<=n-1;r++)
+	for(r=0;r<=n-1;r++)
 	{
-		for(c=0;c<=n-r-1;c++)
+		for(c=0;c<n-r-1;c++)
 		{
 			if(a[c]>a[c+1])
 			{

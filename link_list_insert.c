@@ -93,17 +93,35 @@ int desired()
 		start = new_node;
 		current = new_node;
 	}	
+	
 	else
-	{
-		current = start;
-		while(i!=loc-2)
+	{	if(loc == 1)
 		{
-			current = current->next;
-			i++;
+			new_node->next=start;
+			start = new_node;
+		
 		}
-		temp = current->next;
-		current->next = new_node;
-		new_node->next=temp;
+		else
+		{
+			current = start;
+			while(i!=loc-2)
+			{
+				current = current->next;
+				if(current->next == NULL)
+				{
+					current->next = new_node;
+					printf("the end");
+					display();
+					exit(0);
+				}
+				i++;
+			}
+			temp = current->next;
+
+			current->next = new_node;
+			new_node->next=temp;		
+		}
+
 	}
 return 0;
 }
@@ -123,14 +141,14 @@ return 0;
 
 int main()
 {
-	int ch;
+	int a;
 	do
 	{
 		printf("choose an option to insert at:\n");
 		printf("1 to beginning\n2 to end\n3 to desired\n4 to display\n5 to exit");
-		scanf("%d",&ch);
+		scanf("%d",&a);
 		
-		switch(ch)
+		switch(a)
 		{
 			case 1:begin();break;
 			case 2:end();break;

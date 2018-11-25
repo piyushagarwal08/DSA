@@ -1,10 +1,10 @@
 #include<stdio.h>
 #include<stdlib.h>
-#define max 10
+#define max 3
 
 int top = -1;
 int n;
-int stack[max];
+int stack[4];
 int push();
 int pop();
 int show();
